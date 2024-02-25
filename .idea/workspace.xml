@@ -5,12 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b07b37b8-aab7-4977-9345-7936b38ce8f3" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/Kafka.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kafka启动成功.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helloworld/src/main/java/com/example/config/KafkaConfig2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helloworld/src/main/java/com/example/config/PersistenceConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helloworld/src/main/java/com/example/model/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helloworld/src/main/java/com/example/repository/MessageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helloworld/src/main/java/com/example/service/KafkaConsumerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helloworld/src/main/java/com/example/service/KafkaProducerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-gpt.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/offdata.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/offsetexplorer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/截图 2024-02-25 02-02-51.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/helloworld/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/controller/KafkaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/helloworld/src/main/java/com/example/controller/KafkaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/helloworld/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -19,6 +41,9 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -26,7 +51,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2copWMfQaUVqfRQqTl4eMRGpKq8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -34,6 +61,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.KafkaApplication.executor": "Run",
+    "Maven.helloworld [clean].executor": "Run",
     "Maven.helloworld [compile].executor": "Run",
     "Maven.helloworld [package].executor": "Run",
     "Maven.testkafka [compile].executor": "Run",
@@ -43,15 +71,21 @@
     "Spring Boot.KafkaApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/huavict/Documents/IntelliJ IDEA/JavaEE",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\huavict\Documents\IntelliJ IDEA\testkafka" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.KafkaApplication">
     <configuration name="KafkaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.KafkaApplication" />
@@ -95,7 +129,8 @@
       <option name="presentableId" value="Default" />
       <updated>1708787816597</updated>
       <workItem from="1708787817738" duration="5000" />
-      <workItem from="1708842155992" duration="709000" />
+      <workItem from="1708842155992" duration="3212000" />
+      <workItem from="1708845545770" duration="1413000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -113,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708842680592</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1708843033173</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708843033173</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
