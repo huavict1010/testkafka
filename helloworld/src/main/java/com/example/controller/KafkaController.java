@@ -1,7 +1,6 @@
 package com.example.controller;
 
 import com.example.sender.KafkaSender;
-import com.example.service.KafkaProducerService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-import com.example.model.Message;
 
 /**
  * kafka 测试接口
@@ -21,9 +19,6 @@ import com.example.model.Message;
 public class KafkaController {
     @Autowired
     private KafkaSender kafkaSender;
-
-    @Autowired
-    private KafkaProducerService kafkaProducerService;
 
     @GetMapping("/sendMessageToKafka")
     public String sendMessageToKafka() {
@@ -42,8 +37,4 @@ public class KafkaController {
         return "ok";
     }
 
-    @GetMapping("/sendMessageGPT")
-    public void sendMessage(@RequestBody Message message) {
-        kafkaProducerService.sendMessage(message);
-    }
 }

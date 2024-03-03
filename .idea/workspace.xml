@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b07b37b8-aab7-4977-9345-7936b38ce8f3" name="Changes" comment="Initial commit">
-      <change beforePath="$PROJECT_DIR$/Kafka.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kafka启动成功.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-gpt.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/offdata.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/offsetexplorer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/截图 2024-02-25 02-02-51.png" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/helloworld/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/config/KafkaConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/config/KafkaConfig2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/config/PersistenceConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/controller/KafkaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/helloworld/src/main/java/com/example/controller/KafkaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/model/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/repository/MessageRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/service/KafkaConsumerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/service/KafkaProducerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/service/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/helloworld/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +36,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "huavict1010"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;huavict1010&quot;
   }
-}]]></component>
+}</component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
@@ -64,16 +73,22 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.KafkaApplication.executor": "Run",
+    "Application.KafkaTest.executor": "Run",
     "Maven.helloworld [clean].executor": "Run",
     "Maven.helloworld [compile].executor": "Run",
     "Maven.helloworld [package].executor": "Run",
     "Maven.testkafka [compile].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.KafkaApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/huavict/Documents/IntelliJ IDEA/JavaEE",
+    "last_opened_file_path": "D:/huavict/Documents/IntelliJ IDEA/demokafka",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,10 +103,26 @@
       <recent name="D:\huavict\Documents\IntelliJ IDEA\testkafka\other" />
       <recent name="D:\huavict\Documents\IntelliJ IDEA\testkafka" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.controller" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.KafkaApplication">
     <configuration name="KafkaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.KafkaApplication" />
+      <module name="helloworld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KafkaTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.KafkaTest" />
       <module name="helloworld" />
       <extension name="coverage">
         <pattern>
@@ -113,6 +144,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.KafkaApplication" />
+        <item itemvalue="Application.KafkaTest" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +165,11 @@
       <updated>1708787816597</updated>
       <workItem from="1708787817738" duration="5000" />
       <workItem from="1708842155992" duration="3212000" />
-      <workItem from="1708845545770" duration="1814000" />
+      <workItem from="1708845545770" duration="3744000" />
+      <workItem from="1708861133458" duration="1965000" />
+      <workItem from="1709042240317" duration="15000" />
+      <workItem from="1709457663086" duration="3705000" />
+      <workItem from="1709461588661" duration="1113000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -175,7 +211,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708856987210</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1708857420714</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708857420714</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1708857438023</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708857438023</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +245,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="Initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>

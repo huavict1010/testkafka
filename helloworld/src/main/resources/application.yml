@@ -5,10 +5,10 @@ spring:
     #JDBC驱动
     driver-class-name: com.mysql.cj.jdbc.Driver
     #数据库服务器url
-    url: jdbc:mysql://mysql:3306/oomall_demo?serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/oomall_demo?serverTimezone=Asia/Shanghai
     #数据库服务器用户名和密码
-    username: demouser
-    password: 123456
+    username: root
+    password: 1111
   application:
     name: springboot3-kafka
   kafka:
@@ -54,6 +54,7 @@ spring:
       # manual：当每一批poll()的数据被ListenerConsumer处理之后, 手动调用Acknowledgment.acknowledge()后提交
       # manual_immediate：手动调用Acknowledgment.acknowledge()后立即提交，一般推荐使用这种
       ack-mode: manual_immediate
+
 
 # Logger Config
 logging:
