@@ -23,7 +23,8 @@ public class KafkaController {
     @GetMapping("/sendMessageToKafka")
     public String sendMessageToKafka() {
         Map<String, String> messageMap = new HashMap();
-        messageMap.put("message", "hello world!");
+        String message = "{    \"data\": [        {            \"dbTrafficId\": \"186370029\",            \"cluster\": \"jdbc:mysql//xxx\",             \"sql\": \"SELECT * FROM x_xxx_t\",             \"columns\": [                {                    \"databaseName\": \"damd\",                     \"tableName\": \"x_xxx_t\",                     \"fieldName\": \"id\"                 },                {                    \"databaseName\": \"dsp_xxx_t\",                    \"tableName\": \"api\",                    \"fieldName\": \"/damd/api/sss\"                }            ],            \"rows\": 1000,             \"errorMsg\": \"\"         }    ],    \"tenant_id\": \"00000000000000000000000000000000\",    \"sub_tenant_id\": \"\",    \"app_id\": \"app_000000035422\",    \"agent_id\": \"11892\"}";
+        messageMap.put("message", message);
         ObjectMapper objectMapper = new ObjectMapper();
         String data = null;
         try {
@@ -37,4 +38,8 @@ public class KafkaController {
         return "ok";
     }
 
+    @GetMapping("/getMessageFromKafka")
+    public void getMessageFromKafka() {
+
+    }
 }

@@ -5,21 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b07b37b8-aab7-4977-9345-7936b38ce8f3" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helloworld/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helloworld/src/main/java/com/example/message/ColumnsItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helloworld/src/main/java/com/example/message/DataItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helloworld/src/main/java/com/example/message/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/message.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/message_without_blank.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/other/ColumnsItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/other/DataItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/other/Response.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworld/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/helloworld/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/config/KafkaConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/config/KafkaConfig2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/config/PersistenceConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/controller/KafkaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/helloworld/src/main/java/com/example/controller/KafkaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/model/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/repository/MessageRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/service/KafkaConsumerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/service/KafkaProducerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/service/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworld/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/helloworld/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/src/main/java/com/example/receiver/KafkaReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/helloworld/src/main/java/com/example/receiver/KafkaReceiver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +31,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -72,12 +70,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.KafkaApplication.executor": "Run",
+    "Application.KafkaApplication.executor": "Debug",
     "Application.KafkaTest.executor": "Run",
+    "Application.Main.executor": "Run",
     "Maven.helloworld [clean].executor": "Run",
     "Maven.helloworld [compile].executor": "Run",
     "Maven.helloworld [package].executor": "Run",
     "Maven.testkafka [compile].executor": "Run",
+    "Maven.testkafka [package].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -88,7 +88,7 @@
     "Spring Boot.KafkaApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/huavict/Documents/IntelliJ IDEA/demokafka",
+    "last_opened_file_path": "D:/huavict/Documents/IntelliJ IDEA/testkafka",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -99,6 +99,10 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\huavict\Documents\IntelliJ IDEA\testkafka" />
+      <recent name="D:\huavict\Documents\IntelliJ IDEA\testkafka\helloworld\src\main\java\com\example\message" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\huavict\Documents\IntelliJ IDEA\testkafka\other" />
       <recent name="D:\huavict\Documents\IntelliJ IDEA\testkafka" />
@@ -107,7 +111,7 @@
       <recent name="com.example.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.KafkaApplication">
+  <component name="RunManager" selected="Spring Boot.KafkaApplication">
     <configuration name="KafkaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.KafkaApplication" />
       <module name="helloworld" />
@@ -134,6 +138,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="helloworld" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="KafkaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="helloworld" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.KafkaApplication" />
@@ -143,6 +154,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.KafkaApplication" />
         <item itemvalue="Application.KafkaTest" />
       </list>
@@ -169,7 +181,7 @@
       <workItem from="1708861133458" duration="1965000" />
       <workItem from="1709042240317" duration="15000" />
       <workItem from="1709457663086" duration="3705000" />
-      <workItem from="1709461588661" duration="1113000" />
+      <workItem from="1709461588661" duration="5201000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -227,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708857438023</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1709465357536</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1709465357537</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,5 +268,26 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="Initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/helloworld/src/main/java/com/example/receiver/KafkaReceiver.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/helloworld/src/main/java/Main.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.example.receiver.KafkaReceiver" memberName="msg" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
