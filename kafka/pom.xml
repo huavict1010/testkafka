@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.huavict</groupId>
-        <artifactId>testkafka</artifactId>
+        <artifactId><![CDATA[kafka&redis]]></artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>helloworld</artifactId>
+    <artifactId>kafka</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>helloworld</name>
 
