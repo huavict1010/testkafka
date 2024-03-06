@@ -2,34 +2,45 @@ package com.example;
 
 import com.example.message.Message;
 import com.fasterxml.jackson.core.JsonProcessingException;
+
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.annotation.TopicPartition;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.UUID;
 
 import static com.example.util.JsonUtils.MAPPER;
-@Slf4j
-@SpringBootApplication
-public class KafkaApplication implements CommandLineRunner {
+import static org.assertj.core.api.Assertions.assertThat;
 
-    private static final String TOPIC = "test-topic";
+@EnableKafka
+@Slf4j
+@ExtendWith(SpringExtension.class)
+@SpringBootTest(classes = KafkaApplication.class)
+//@ComponentScan("com.example")
+public class KafkaApplicationTest {
 
     @Autowired
+    private static final String TOPIC = "test-topic";
+    private static final String TOPIC2 = "T_xArmorSDP_dbTraffic";
+
+    @MockBean
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    public static void main(String[] args) {
-        SpringApplication.run(KafkaApplication.class, args);
-    }
+    private String receivedMessage;
 
-    @Override
-    public void run(String... args) throws Exception {
-        // 发送消息到名为"example-topic"的Kafka主题
-//        kafkaTemplate.send("test-topic", "Hello, Kafka!");
+    @Test
+    @DirtiesContext
+    public void testKafkaListener() throws InterruptedException {
         String message = "{\n" +
                 "    \"data\": [\n" +
                 "        {\n" +
@@ -58,20 +69,23 @@ public class KafkaApplication implements CommandLineRunner {
                 "    \"agent_id\": \"11892\"\n" +
                 "}";
         kafkaTemplate.send(TOPIC,0, UUID.randomUUID().toString(), message);
-//        System.out.println(message);
+        System.out.println(message);
 
         // Wait for the message to be received
         Thread.sleep(2000);
 
+        assertThat(receivedMessage).isEqualTo(message);
     }
 
-    @KafkaListener(topics = "test-topic", groupId = "test-group")
+    @KafkaListener(topics = TOPIC, groupId = "test-group",  topicPartitions  = {
+            @TopicPartition(topic = TOPIC, partitions = { "0" })
+    })
     public void listen(String message) {
-        System.out.println("Received Message in group 'example-group': " + message);
         Message msg = readValue(message, Message.class);
         if (msg != null) {
-            System.out.println("get obj:" + msg.getAppId());
+            System.out.println("get obj");
         }
+        receivedMessage = message;
     }
 
     protected <T> T readValue(String value, Class<T> classType) {
@@ -83,4 +97,3 @@ public class KafkaApplication implements CommandLineRunner {
         return null;
     }
 }
-
