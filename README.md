@@ -1,3 +1,32 @@
+```java
+@Configuration
+public class RedisCacheManagerConfig {
+    @Bean("DB")
+    public RedisCacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
+        // 分别创建String和JSON格式序列化对象，对缓存数据key和value进行转换
+        RedisSerializer<String> strSerializer = new StringRedisSerializer();
+        Jackson2JsonRedisSerializer jacksonSerial = new Jackson2JsonRedisSerializer(Object.class);
+        // 解决查询缓存转换异常的问题
+        ObjectMapper om = new ObjectMapper();
+        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+        // om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
+        om.activateDefaultTyping(LaissezFaireSubTypeValidator.instance, ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY); // 上面注释过时代码的替代方法
+        jacksonSerial.setObjectMapper(om);
+        // 定制缓存数据序列化方式及时效
+        RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
+                .entryTtl(Duration.ofHours(1)) // 设置缓存数据的时效（设置为1了小时）
+                .serializeKeysWith(RedisSerializationContext.SerializationPair
+                        .fromSerializer(strSerializer)) // 对当前对象的key使用strSerializer这个序列化对象，进行转换
+                .serializeValuesWith(RedisSerializationContext.SerializationPair
+                        .fromSerializer(jacksonSerial)) // 对value使用jacksonSerial这个序列化对象，进行转换
+                .disableCachingNullValues();
+        RedisCacheManager cacheManager = RedisCacheManager
+                .builder(redisConnectionFactory).cacheDefaults(config).build();
+        return cacheManager;
+    }
+}
+```
+
 ```log
 2024-03-14 09:42:09,818 [WebContainer : 134] INFO  LogCloudSpanReporter:47 - {"traceid":"44e31739-0ee0-472b-86a5-e51657af4e74","spanparentid":"null","spanid":"44e31739-0ee0-472b-86a5-e51657af4e74","spanname":"00000000000000000000000000000282","starttime":"1710380529804","endtime":"1710380529818","duration":14,"st_request_type":"sr","et_request_type":"ss","url":"http://localhost:8004/redis/damdService-DBTrffaic","servicetype":"SERVICE","thread":"Thread[http-nio-8004-exec-2,5,main]","servicename":"DamdService","appid":"00000000000000000000000000000282","subappid":"DamdService","appname":"damd","env":"l30055129","region":"kwe4op","interface":"http://localhost:8004/redis/damdService-DBTrffaic","methodname":"public boolean com.huawei.it.xarmor.damd.controller.KafkaProducer.isCacheContainingData(java.lang.String)","protocol":"SERVICE","userid":"null","clientip":"null","x-his-uem-traceid":"null","logtext":"Error creating bean with name 'DB' defined in com.huawei.it.xarmor.damd.infrastructure.cache.RedisCacheManagerConfig: Unsatisfied dependency expressed through method 'cacheManager' parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.data.redis.connection.RedisConnectionFactory' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}","status":"fail"}
 ```
