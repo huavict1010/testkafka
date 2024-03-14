@@ -1,3 +1,33 @@
+> [MBTI 八维怎么看？](https://www.zhihu.com/question/324564842?utm_id=0)
+>
+> 随机游走算法 反向传播 交叉熵损失函数
+
+> 深度神经网络DNN 循环神经网络RNN Attention机制 图神经网络GNN 卷积神经网络CNN Encoder-Decoder架构 对抗神经网络GAN
+
+> AlexNet ResNet Transformer **Transformer架构和其他衍生模型： Bert 系列和 GPT 系列** 多模态 
+《 中国人工智能大模型地图研究报告 》
+Code LLM：代码生成大语言模型
+《大规模预训练模型如何赋能代码智能》
+[Copilot背后的功臣：OpenAI Codex](https://zhuanlan.zhihu.com/p/414210861)
+GPU并行计算
+
+> Hugging face 抱抱脸社区 https://huggingface.co/
+GPT
+文本生成： https://huggingface.co/gpt2?text=A+long+time+ago%2C
+A Survey of Large Language Models paper
+What Language Model Architecture and Pretraining Objective Work Best for Zero-Shot Generalization?
+Java Deep Learning Essentials.pdf 
+Graduate Texts in Mathematics 244 graph-theory.pdf
+GRAPH THEORY WITH APPLICATIONS J. A. Bondy and U. S. R. Murty
+
+> 编程规范 mutable Locale.ROOT 
+浮点型数据判断相等不要直接使用==，浮点型包装类型不要用equals()或者flt.compareTo(another) == 0作相等的比较
+禁止尝试与NaN进行比较运算，相等操作使用Double或Float的isNaN()方法
+字符与字节的互相转换操作，要指明正确的编码方式
+涉及位操作，推荐使用括号
+禁止直接使用可能为null的对象，防止出现空指针引用
+
+
 >《
 几何原本 》 公元前 300 年左右
 《
