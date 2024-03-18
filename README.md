@@ -1,3 +1,7 @@
+https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/toc.html
+https://docs.oracle.com/javase/8/docs/technotes/guides/jpda/
+https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html
+
 > [MBTI 八维怎么看？](https://www.zhihu.com/question/324564842?utm_id=0)
 >
 > 随机游走算法 反向传播 交叉熵损失函数
